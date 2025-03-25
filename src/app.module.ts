@@ -10,7 +10,7 @@ import { Song } from './song.entity';
       type: 'postgres',
       url: 'postgresql://postgres:J72OGjBeANIxV0jQ@sensuously-feasible-snail.data-1.use1.tembo.io:5432/postgres',
       entities: [Song],
-      synchronize: true, 
+      synchronize: false, 
       ssl: {
         rejectUnauthorized: false,
       },

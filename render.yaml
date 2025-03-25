@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: nidana-music-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    nodeVersion: 18.x
+    envVars:
+      - key: NODE_ENV
+        value: production 
