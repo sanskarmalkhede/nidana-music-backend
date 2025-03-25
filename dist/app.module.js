@@ -22,7 +22,7 @@ exports.AppModule = AppModule = __decorate([
                 type: 'postgres',
                 url: 'postgresql://postgres:J72OGjBeANIxV0jQ@sensuously-feasible-snail.data-1.use1.tembo.io:5432/postgres',
                 entities: [song_entity_1.Song],
-                synchronize: true,
+                synchronize: false,
                 ssl: {
                     rejectUnauthorized: false,
                 },
