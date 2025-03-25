@@ -3,14 +3,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Song } from './song.entity';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: 'postgresql://postgres:J72OGjBeANIxV0jQ@sensuously-feasible-snail.data-1.use1.tembo.io:5432/postgres',
+      url: process.env.DATABASE_URL,
       entities: [Song],
-      synchronize: false, 
+      synchronize: false,
       ssl: {
         rejectUnauthorized: false,
       },
