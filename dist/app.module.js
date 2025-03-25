@@ -12,6 +12,8 @@ const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const song_entity_1 = require("./song.entity");
+const dotenv = require("dotenv");
+dotenv.config();
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -20,7 +22,7 @@ exports.AppModule = AppModule = __decorate([
         imports: [
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'postgres',
-                url: 'postgresql://postgres:J72OGjBeANIxV0jQ@sensuously-feasible-snail.data-1.use1.tembo.io:5432/postgres',
+                url: process.env.DATABASE_URL,
                 entities: [song_entity_1.Song],
                 synchronize: false,
                 ssl: {
